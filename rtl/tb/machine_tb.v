@@ -28,9 +28,6 @@ module machine_tb;
   // ==========================
 
   initial begin
-    if (!$value$plusargs("memfile=%s", memfile)) begin
-      memfile = "memory.list"; // default fallback
-    end
     $readmemh("../../memory.list", m_machine.m_ram.mem);
     $dumpfile("machine.vcd");
     $dumpvars(0, m_machine);
